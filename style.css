@@ -496,6 +496,24 @@ body {
     width: 0%;
 }
 
+/* Color variations based on skill level */
+.skill-bar[data-level="45"] .skill-bar-fill,
+.skill-bar[data-level="55"] .skill-bar-fill {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Beginner - Pink */
+}
+
+.skill-bar[data-level="60"] .skill-bar-fill,
+.skill-bar[data-level="65"] .skill-bar-fill,
+.skill-bar[data-level="70"] .skill-bar-fill {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); /* Intermediate - Cyan-Pink */
+}
+
+.skill-bar[data-level="75"] .skill-bar-fill,
+.skill-bar[data-level="80"] .skill-bar-fill,
+.skill-bar[data-level="85"] .skill-bar-fill {
+    background: var(--gradient-tertiary); /* Advanced - Original gradient */
+}
+
 .skill-years {
     color: var(--accent-primary);
     font-size: 0.8rem;
