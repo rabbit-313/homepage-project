@@ -90,21 +90,27 @@
                                 <div class="skill-item">
                                     <div class="skill-name">Python</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="90"></div>
+                                        <div class="skill-bar" data-level="90">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">4年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">SQL</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="75"></div>
+                                        <div class="skill-bar" data-level="75">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">3年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">JavaScript</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="60"></div>
+                                        <div class="skill-bar" data-level="60">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">2年</span>
                                     </div>
                                 </div>
@@ -114,28 +120,36 @@
                                 <div class="skill-item">
                                     <div class="skill-name">TensorFlow</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="85"></div>
+                                        <div class="skill-bar" data-level="85">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">3年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">PyTorch</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="80"></div>
+                                        <div class="skill-bar" data-level="80">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">3年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">Scikit-learn</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="85"></div>
+                                        <div class="skill-bar" data-level="85">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">4年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">推薦システム</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="75"></div>
+                                        <div class="skill-bar" data-level="75">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">1年</span>
                                     </div>
                                 </div>
@@ -145,21 +159,27 @@
                                 <div class="skill-item">
                                     <div class="skill-name">GCP</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="70"></div>
+                                        <div class="skill-bar" data-level="70">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">2年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">Docker</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="65"></div>
+                                        <div class="skill-bar" data-level="65">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">2年</span>
                                     </div>
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-name">Git</div>
                                     <div class="skill-level">
-                                        <div class="skill-bar" data-level="80"></div>
+                                        <div class="skill-bar" data-level="80">
+                                            <div class="skill-bar-fill"></div>
+                                        </div>
                                         <span class="skill-years">4年</span>
                                     </div>
                                 </div>
@@ -299,9 +319,13 @@
                         if (!bar.classList.contains('animated')) {
                             bar.classList.add('animated');
                             const level = bar.getAttribute('data-level');
-                            setTimeout(() => {
-                                bar.style.setProperty('--bar-width', level + '%');
-                            }, 200);
+                            const fillElement = bar.querySelector('.skill-bar-fill');
+                            
+                            if (fillElement) {
+                                setTimeout(() => {
+                                    fillElement.style.width = level + '%';
+                                }, 200);
+                            }
                         }
                     });
                 }
