@@ -292,6 +292,18 @@
                 const elementTop = element.getBoundingClientRect().top;
                 if (elementTop < windowHeight - 100) {
                     element.classList.add('visible');
+                    
+                    // Animate skill bars when they become visible
+                    const skillBars = element.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        if (!bar.classList.contains('animated')) {
+                            bar.classList.add('animated');
+                            const level = bar.getAttribute('data-level');
+                            setTimeout(() => {
+                                bar.style.setProperty('--bar-width', level + '%');
+                            }, 200);
+                        }
+                    });
                 }
             });
             

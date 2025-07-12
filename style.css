@@ -488,6 +488,10 @@ body {
     overflow: hidden;
 }
 
+.skill-bar {
+    --bar-width: 0%;
+}
+
 .skill-bar::before {
     content: '';
     position: absolute;
@@ -496,17 +500,9 @@ body {
     height: 100%;
     background: var(--gradient-tertiary);
     border-radius: 4px;
-    transition: width 1s ease-out;
-    width: 0;
+    transition: width 1.2s ease-out;
+    width: var(--bar-width);
 }
-
-.skill-bar[data-level="90"]::before { width: 90%; }
-.skill-bar[data-level="85"]::before { width: 85%; }
-.skill-bar[data-level="80"]::before { width: 80%; }
-.skill-bar[data-level="75"]::before { width: 75%; }
-.skill-bar[data-level="70"]::before { width: 70%; }
-.skill-bar[data-level="65"]::before { width: 65%; }
-.skill-bar[data-level="60"]::before { width: 60%; }
 
 .skill-years {
     color: var(--accent-primary);
