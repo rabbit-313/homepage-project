@@ -532,6 +532,21 @@ body {
     font-size: 1.3rem;
 }
 
+.paper-abstract {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(100, 255, 218, 0.05);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: 5px;
+}
+
+.paper-abstract p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .paper-authors,
 .paper-venue {
     color: var(--text-secondary);
