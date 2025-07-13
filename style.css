@@ -497,6 +497,7 @@ body {
 }
 
 /* Color variations based on skill level */
+.skill-bar[data-level="40"] .skill-bar-fill,
 .skill-bar[data-level="45"] .skill-bar-fill,
 .skill-bar[data-level="55"] .skill-bar-fill {
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Beginner - Pink */
@@ -510,7 +511,8 @@ body {
 
 .skill-bar[data-level="75"] .skill-bar-fill,
 .skill-bar[data-level="80"] .skill-bar-fill,
-.skill-bar[data-level="85"] .skill-bar-fill {
+.skill-bar[data-level="85"] .skill-bar-fill,
+.skill-bar[data-level="90"] .skill-bar-fill {
     background: var(--gradient-tertiary); /* Advanced - Original gradient */
 }
 
