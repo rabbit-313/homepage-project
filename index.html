@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="scene" aria-hidden="true"></canvas>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Ru</div>
@@ -33,33 +34,27 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <div class="hero-left">
-                    <p class="hero-label">Machine Learning Engineer</p>
-                    <h1 class="hero-name">Ru Ito</h1>
-                    <p class="hero-role">ML Engineer / Researcher<br>Models, Pipelines, Infrastructure</p>
-                    <div class="hero-meta">
-                        <div class="hero-meta-item">
-                            <span class="hero-meta-label">Focus</span>
-                            <span class="hero-meta-value">ML Systems</span>
-                        </div>
-                        <div class="hero-meta-item">
-                            <span class="hero-meta-label">Based in</span>
-                            <span class="hero-meta-value">Tokyo, Japan</span>
-                        </div>
-                        <div class="hero-meta-item">
-                            <span class="hero-meta-label">Experience</span>
-                            <span class="hero-meta-value">Since 2019</span>
-                        </div>
+                <p class="hero-label">Machine Learning Engineer</p>
+                <h1 class="hero-name">Ru Ito</h1>
+                <p class="hero-role">ML Engineer / Researcher<br>Models, Pipelines, Infrastructure</p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Focus</span>
+                        <span class="hero-meta-value">ML Systems</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Based in</span>
+                        <span class="hero-meta-value">Tokyo, Japan</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Experience</span>
+                        <span class="hero-meta-value">Since 2019</span>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="oak-ring oak-ring-1"></div>
-                    <div class="oak-ring oak-ring-2"></div>
-                    <div class="oak-dot oak-dot-1"></div>
-                    <div class="oak-dot oak-dot-2"></div>
-                    <div class="oak-dot oak-dot-3"></div>
-                    <div class="oak-visual"></div>
-                </div>
+            </div>
+            <div class="scroll-hint" aria-hidden="true">
+                <span class="scroll-hint-line"></span>
+                Scroll
             </div>
         </section>
 
@@ -69,43 +64,46 @@
                 <h2 class="section-title">What I Do</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" fill="none" stroke="var(--oak-accent)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4m-2.8-7.2-2.8 2.8M7.6 16.4l-2.8 2.8m0-14.4 2.8 2.8m8.8 8.8 2.8 2.8"/></svg>
+                        <div class="service-head">
+                            <h3>MLモデル開発</h3>
                         </div>
-                        <h3>MLモデル開発</h3>
-                        <p>推薦システム、画像認識、自然言語処理など、ビジネス課題に最適な機械学習モデルの設計・開発・評価を行います。</p>
-                        <ul class="service-features">
-                            <li>推薦システムの設計・実装</li>
-                            <li>画像処理・コンピュータビジョン</li>
-                            <li>モデルの評価・改善</li>
-                            <li>A/Bテストの設計・分析</li>
-                        </ul>
+                        <div class="service-body">
+                            <p>推薦システム、画像認識、自然言語処理など、ビジネス課題に最適な機械学習モデルの設計・開発・評価を行います。</p>
+                            <ul class="service-features">
+                                <li>推薦システムの設計・実装</li>
+                                <li>画像処理・コンピュータビジョン</li>
+                                <li>モデルの評価・改善</li>
+                                <li>A/Bテストの設計・分析</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" fill="none" stroke="var(--oak-accent)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m4 0h4M12 6v12"/></svg>
+                        <div class="service-head">
+                            <h3>MLインフラ構築</h3>
                         </div>
-                        <h3>MLインフラ構築</h3>
-                        <p>MLモデルを本番環境で安定して運用するためのパイプライン設計、インフラ構築、MLOpsの導入を支援します。</p>
-                        <ul class="service-features">
-                            <li>MLパイプラインの設計・構築</li>
-                            <li>クラウドインフラ（GCP）構築</li>
-                            <li>データ基盤の設計</li>
-                            <li>CI/CD・MLOpsの導入</li>
-                        </ul>
+                        <div class="service-body">
+                            <p>MLモデルを本番環境で安定して運用するためのパイプライン設計、インフラ構築、MLOpsの導入を支援します。</p>
+                            <ul class="service-features">
+                                <li>MLパイプラインの設計・構築</li>
+                                <li>クラウドインフラ（GCP）構築</li>
+                                <li>データ基盤の設計</li>
+                                <li>CI/CD・MLOpsの導入</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" fill="none" stroke="var(--oak-accent)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6 2 12s4.48 10 10 10 10-4 10-10S17.52 2 12 2z"/><path d="M2 12h20M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z"/></svg>
+                        <div class="service-head">
+                            <h3>技術コンサルティング</h3>
                         </div>
-                        <h3>技術コンサルティング</h3>
-                        <p>ML/AIの導入検討から技術選定、チーム立ち上げまで、技術的な意思決定をサポートします。</p>
-                        <ul class="service-features">
-                            <li>ML/AI導入の技術検証（PoC）</li>
-                            <li>技術選定・アーキテクチャ設計</li>
-                            <li>データ活用戦略の策定</li>
-                            <li>技術レビュー・メンタリング</li>
-                        </ul>
+                        <div class="service-body">
+                            <p>ML/AIの導入検討から技術選定、チーム立ち上げまで、技術的な意思決定をサポートします。</p>
+                            <ul class="service-features">
+                                <li>ML/AI導入の技術検証（PoC）</li>
+                                <li>技術選定・アーキテクチャ設計</li>
+                                <li>データ活用戦略の策定</li>
+                                <li>技術レビュー・メンタリング</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -257,42 +255,30 @@
     </footer>
 
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+            document.querySelector('.nav-toggle').classList.toggle('open');
         }
 
         function closeMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.remove('active');
+            document.querySelector('.nav-menu').classList.remove('active');
+            document.querySelector('.nav-toggle').classList.remove('open');
         }
 
         document.addEventListener('click', function(e) {
             const navMenu = document.querySelector('.nav-menu');
             const navToggle = document.querySelector('.nav-toggle');
             if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
+                closeMenu();
             }
         });
 
-        function handleScroll() {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            const windowHeight = window.innerHeight;
-
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 80) {
-                    element.classList.add('visible');
-                }
-            });
-
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        function handleNavbar() {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
         }
+        window.addEventListener('scroll', handleNavbar, { passive: true });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -300,7 +286,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth',
                         block: 'start'
                     });
                 }
@@ -309,14 +295,49 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const animateElements = document.querySelectorAll(
-                '.service-card, .about-content, .timeline-item, .skill-category, .paper-card, .contact-content, .section-title, .section-label'
+                '.service-card, .about-text, .about-career h4, .timeline-item, .skill-category, .paper-card, .contact-content, .section-title, .section-label'
             );
             animateElements.forEach(el => el.classList.add('animate-on-scroll'));
-            handleScroll();
-        });
 
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
+            if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+                animateElements.forEach(el => el.classList.add('visible'));
+            } else {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.filter(entry => entry.isIntersecting).forEach((entry, i) => {
+                        const el = entry.target;
+                        el.style.transitionDelay = Math.min(i * 90, 450) + 'ms';
+                        el.addEventListener('transitionend', () => {
+                            el.style.transitionDelay = '';
+                        }, { once: true });
+                        el.classList.add('visible');
+                        revealObserver.unobserve(el);
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+                animateElements.forEach(el => revealObserver.observe(el));
+            }
+
+            const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+            document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+
+            handleNavbar();
+        });
     </script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
