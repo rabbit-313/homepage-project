@@ -408,19 +408,24 @@ a:focus-visible,
 .service-features {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
 .service-features li {
-    display: inline;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
     color: var(--text-muted);
     font-size: 0.85rem;
     font-weight: 300;
 }
 
-.service-features li + li::before {
-    content: '·';
-    margin: 0 0.8rem;
+.service-features li::before {
+    content: '–';
     color: var(--oak-warm);
+    flex-shrink: 0;
 }
 
 /* ===== About ===== */
