@@ -847,6 +847,7 @@ footer p {
 
     .section {
         padding: 5rem 0;
+        min-height: auto;
     }
 
     .section-title {
